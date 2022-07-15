@@ -8,6 +8,12 @@
     --button-color-hover:#188CE8;
     --border-color:#EEEEEE;
     --icon-color:#AFB1B8;
+    --modal-icon-color: #212121;
+    --defaul-duration: 250ms;
+    --default-timing: cubic-bezier(0.4, 0, 0.2, 1);
+    --modal-input-border: 1px solid rgba(33, 33, 33, 0.2);
+    --modal-board-radius: 4px;
+    
 }
 /* body main */
 
@@ -231,6 +237,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    padding: 40px 40px;
+    display: block;
     width: 528px;
     height: 581px;
     background: #FFFFFF;
@@ -254,6 +262,102 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: var(--modal-form-width);
+    text-align: left;
+    padding: 0;
+}
+
+.form-title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.15;
+    text-align: center;
+    color: #212121;
+    margin-bottom: 12px;
+}
+
+.form-group-field {
+    width: 100%;
+    font-size: 16px;
+    line-height: 1.125;
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+    color: #757575;
+    padding: 0;
+    margin-bottom: 4px;
+}
+
+.form-field {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.input-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    fill: #212121;
+    transition: fill var(--defaul-duration) var(--default-timing);
+}
+
+.form-input {
+    width: 100%;
+    min-height: 40px;
+    border: var(--modal-input-border);
+    border-radius: var(--modal-board-radius);
+    padding-left: 42px;
+    color: var(--modal-text-color);
+    transition: border var(--defaul-duration) var(--default-timing);
+
+}
+
+.form-textarea {
+    display: block;
+    width: 100%;
+    min-height: 120px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin: 0;
+    resize: none;
+    outline: none;
+
+    transition-property: border;
+    transition-duration: 250ms;
+    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+.form-textarea:focus-within {
+    border: 1px solid var(--effect-color)
+}
+
+
+
+.form-field:focus-within>.input-icon {
+    fill: var(--effect-color);
+}
+
+.form-input:focus-within {
+    border: 1px solid #2196f3;
+}
+
+.form-textarea::placeholder {
+    color: rgba(117, 117, 117, 0.5);
+}
 
 /* advantage */
 
